@@ -8,12 +8,12 @@ postRouter.route('/updateLand')
 
         // 1. Connect to landsys
         var bnUtil = require('./bn-connection-util');
-        bnUtil.connect(mainconnect);
+        
 
         var deedno = req.body.deedno;
         var landValue = req.body.landValue;
         var taxCompliant = req.body.taxCompliant;
-
+        bnUtil.connect(mainconnect);
         function mainconnect(error) {
 
             // Check for error
@@ -153,7 +153,7 @@ postRouter.route('/createLand')
         bnUtil.connect(mainconnect);
 
 
-        function main(error) {
+        function mainconnect(error) {
 
             // Check for error
             if (error) {
